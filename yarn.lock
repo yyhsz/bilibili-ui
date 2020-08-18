@@ -835,6 +835,11 @@ follow-redirects@^1.0.0:
   resolved "https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.13.0.tgz?cache=0&sync_timestamp=1597058055564&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha1-tC6Nk6Kn7qXtiGM2dtZZe8jjhNs=
 
+fonts.css@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/fonts.css/download/fonts.css-2.0.0.tgz#097e890a44c982c7df55cca8466e3ce7668b790c"
+  integrity sha1-CX6JCkTJgsffVcyoRm4852aLeQw=
+
 fresh@~0.5.2:
   version "0.5.2"
   resolved "https://registry.npm.taobao.org/fresh/download/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
