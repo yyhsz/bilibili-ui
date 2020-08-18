@@ -8,7 +8,6 @@ const router = createRouter({
     routes:[
         {path:'/',component:Home},
         {path:'/doc',component:Doc},
-
     ]
 })
 
