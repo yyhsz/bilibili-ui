@@ -2,7 +2,22 @@
   <div>
     <top-nav></top-nav>
     <div class="content">
-      <aside>边栏</aside>
+      <aside>
+        <ol>
+          <li>
+            <router-link to="/doc/switch">switch</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/button">button</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/dialog">dialog</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/tabs">tabs</router-link>
+          </li>
+        </ol>
+      </aside>
       <main>主内容</main>
     </div>
   </div>
@@ -18,5 +33,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+aside {
+  background: rgb(169, 241, 162);
+  width: 150px;
+  padding: 16px;
+  padding-top: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  > ol {
+    > li {
+      padding: 4px 0;
+    }
+  }
+}
 </style>

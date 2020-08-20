@@ -5,8 +5,8 @@
       <h1>IZ*ONE</h1>
       <h2>一个izone主题框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a>
+        <a href="">GitHub</a>
+        <router-link to="/doc" >开始</router-link>
       </p>
     </div>
   </div>
