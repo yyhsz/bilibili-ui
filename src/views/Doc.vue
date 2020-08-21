@@ -2,7 +2,7 @@
   <div>
     <top-nav></top-nav>
     <div class="content">
-      <aside>
+      <aside v-if="showMenu">
         <ol>
           <li>
             <router-link to="/doc/switch">switch</router-link>
@@ -25,11 +25,18 @@
 
 <script lang="ts">
 import TopNav from "../components/content/TopNav.vue";
+import { inject, Ref } from 'vue';
 export default {
   name: "Doc",
   components: {
     TopNav,
   },
+  setup(){
+    const showMenu = inject<Ref<boolean>>('showMenu')
+    return {
+      showMenu
+    }
+  }
 };
 </script>
 

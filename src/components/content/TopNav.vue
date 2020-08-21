@@ -1,6 +1,6 @@
 <template>
     <div class="top-nav">
-      <div class="logo">LOGO</div>
+      <div class="logo" @click="toggleMenu">LOGO</div>
       <ul class="menu">
         <li>菜单1</li>
         <li>菜单2</li>
@@ -9,8 +9,18 @@
 </template>
 
 <script lang="ts">
+import { inject, Ref } from 'vue'
     export default {
-        name:'TopNav'
+        name:'TopNav',
+        setup(){
+          const showMenu = inject<Ref<boolean>>('showMenu')
+          const toggleMenu = ()=>{
+            showMenu.value = !showMenu.value
+          }
+          return{
+            toggleMenu
+          }
+        }
     }
 </script>
 
