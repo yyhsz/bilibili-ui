@@ -20,7 +20,7 @@
         </ol>
       </aside>
       <main>
-        <router-view/>
+        <router-view />
       </main>
     </div>
   </div>
@@ -29,10 +29,8 @@
 <script lang="ts">
 import TopNav from "../components/content/TopNav.vue";
 
-
 import { inject, Ref } from "vue";
-import router from '../router';
-
+import router from "../router";
 
 export default {
   name: "Doc",
@@ -41,7 +39,7 @@ export default {
   },
   setup() {
     const showMenu = inject<Ref<boolean>>("showMenu");
-   
+
     return {
       showMenu,
     };
@@ -50,22 +48,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.content {
+  height: 100vh;
+  padding-top: 60px;
+  padding-left: 156px;
+  @media (max-width: 500px) {
+    padding-left: 0;
+  }
+  display: flex;
+  > aside {
+    flex: 0 0;
+  }
+}
 aside {
   background: rgb(169, 241, 162);
   width: 150px;
   padding: 16px;
-  
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 70px;
+  height: 100%;
   > ol {
     > li {
       padding: 4px 0;
     }
   }
-  @media (max-width: 500px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 70px;
-  }
+}
+main {
+  background: rgb(185, 211, 241);
+  flex: 1 0;
+  overflow: auto;
 }
 </style>

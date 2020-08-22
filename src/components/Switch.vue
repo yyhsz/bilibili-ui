@@ -1,13 +1,110 @@
 <template>
-    <div>
-        SWITCH
-    </div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
+    <div>switch</div>
 </template>
 
 <script>
-    export default {
-        name:'Switch'
-    }
+export default {
+  name: "Switch",
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
     <span class="toggleAside" @click="toggleMenu"></span>
-    <div class="logo" >LOGO</div>
+    <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -32,7 +32,10 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 3;
 
   > .logo {
@@ -64,8 +67,8 @@ export default {
     > .logo {
       margin-right: 0;
     }
-    > .toggleAside{
-      display:inline-block
+    > .toggleAside {
+      display: inline-block;
     }
   }
 }
