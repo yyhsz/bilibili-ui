@@ -11,7 +11,8 @@ export default {
    
   },
   setup(){
-    const showMenu = ref(false)
+    const width = document.documentElement.clientWidth
+    const showMenu = ref(width <= 500 ? false : true)
     provide('showMenu',showMenu)
   }
 }

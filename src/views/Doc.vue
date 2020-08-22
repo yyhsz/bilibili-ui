@@ -25,18 +25,18 @@
 
 <script lang="ts">
 import TopNav from "../components/content/TopNav.vue";
-import { inject, Ref } from 'vue';
+import { inject, Ref } from "vue";
 export default {
   name: "Doc",
   components: {
     TopNav,
   },
-  setup(){
-    const showMenu = inject<Ref<boolean>>('showMenu')
+  setup() {
+    const showMenu = inject<Ref<boolean>>("showMenu");
     return {
-      showMenu
-    }
-  }
+      showMenu,
+    };
+  },
 };
 </script>
 
@@ -45,14 +45,18 @@ aside {
   background: rgb(169, 241, 162);
   width: 150px;
   padding: 16px;
-  padding-top: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  
+
   > ol {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
   }
 }
 </style>

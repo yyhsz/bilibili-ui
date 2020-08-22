@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
-    <span class="toggleAside"></span>
-    <div class="logo" @click="toggleMenu">LOGO</div>
+    <span class="toggleAside" @click="toggleMenu"></span>
+    <div class="logo" >LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -47,9 +47,15 @@ export default {
       margin: 0 1em;
     }
   }
-  > .toggleAside{
-    width: 24px;height: 24px;background: rgb(221, 243, 201);
-    position: absolute;left: 16px;top: 50%;transform: translateY(-50%);
+  > .toggleAside {
+    width: 24px;
+    height: 24px;
+    background: rgb(221, 243, 201);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
   }
   @media (max-width: 500px) {
     > .menu {
@@ -57,6 +63,9 @@ export default {
     }
     > .logo {
       margin-right: 0;
+    }
+    > .toggleAside{
+      display:inline-block
     }
   }
 }
