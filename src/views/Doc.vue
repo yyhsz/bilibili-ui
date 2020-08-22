@@ -5,6 +5,7 @@
       <aside v-if="showMenu">
         <ol>
           <li>
+            <!--<router-link :to="{name:'switch'}">switch</router-link>-->
             <router-link to="/doc/switch">switch</router-link>
           </li>
           <li>
@@ -18,14 +19,21 @@
           </li>
         </ol>
       </aside>
-      <main>主内容</main>
+      <main>
+        <router-view/>
+      </main>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import TopNav from "../components/content/TopNav.vue";
+
+
 import { inject, Ref } from "vue";
+import router from '../router';
+
+
 export default {
   name: "Doc",
   components: {
@@ -33,6 +41,7 @@ export default {
   },
   setup() {
     const showMenu = inject<Ref<boolean>>("showMenu");
+   
     return {
       showMenu,
     };
