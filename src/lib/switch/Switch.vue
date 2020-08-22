@@ -7,12 +7,17 @@
 <script>
 import {ref } from 'vue'
 export default {
-  setup() {
-    const checked = ref(true) 
-    const toggle = ()=>{
-      checked.value = !checked.value
+  props:{
+    checked:{
+      type:Boolean,
+      default:true
     }
-    return {checked,toggle};
+  },
+  setup(props,ctx) {
+    const toggle = ()=>{
+      ctx.emit('switchClick',!props.checked)
+    }
+    return {toggle};
   },
 };
 </script>
