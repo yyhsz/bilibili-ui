@@ -15,7 +15,7 @@ export default {
   },
   setup(props,ctx) {
     const toggle = ()=>{
-      ctx.emit('switchClick',!props.checked)
+      ctx.emit('update:checked',!props.checked)
     }
     return {toggle};
   },
