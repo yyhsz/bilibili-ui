@@ -1,15 +1,26 @@
 <template>
   <div>
-    <button>nihao </button>
+  <button-ab @click="dianji" theme="text">ass</button-ab>
+  <button-ab @click="dianji" >ass</button-ab>
+  <button-ab @click="dianji" >ass</button-ab>
+  <button-ab @click="dianji" >ass</button-ab>
   </div>
 </template>
 
-<script>
-import Button from "../lib/button/Button.vue";
+<script lang="ts">
+import ButtonAb from "../lib/button/ButtonAb.vue";
 export default {
   name: "Button",
   components: {
-    Button,
+    ButtonAb
+  },
+  setup() {
+    const dianji = () => {
+      console.log(1);
+    };
+    return {
+      dianji,
+    };
   },
 };
 </script>
