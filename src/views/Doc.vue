@@ -76,7 +76,7 @@ aside {
   }
 }
 main {
-  background: rgb(185, 211, 241);
+  background: white;
   flex: 1 0;
   overflow: auto;
 }
