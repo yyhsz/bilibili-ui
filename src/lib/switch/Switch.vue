@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{checked:checked}">
+  <button @click="toggle" class="iz-switch" :class="{'iz-checked':checked}">
     <span></span>
   </button>
 </template>
@@ -22,10 +22,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.iz-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -44,7 +44,7 @@ button {
     left: 2px;
     transition: all 250ms ease-in-out;
   }
-  &.checked {
+  &.iz-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -55,7 +55,7 @@ button {
       width: $h2 + 4px;
     }
   }
-  &.checked:active {
+  &.iz-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

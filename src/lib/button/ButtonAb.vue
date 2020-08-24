@@ -1,31 +1,59 @@
 <template>
-  <button class="default" :class="`theme-${theme}`">
+  <button class="iz-button" :class="classes">
     <slot></slot>
   </button>
 </template>
 
 <script>
+import { computed } from "vue";
+
 export default {
-  props:{
-    theme:{
-      type:String,
-      default:'button'
-    }
+  props: {
+    theme: {
+      type: String,
+      default: "button",
+    },
+    size: {
+      type: String,
+      default: "medium",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: String,
+      default: "false",
+    },
   },
-  setup(props,ctx) {
-      
-    return {};
+  setup(props, ctx) {
+    const { theme, loading, size, level, disabled } = props;
+    const classes = computed(() => {
+      return {
+        [`iz-theme-${theme}`]: theme,
+        [`iz-size-${size}`]: size,
+        [`iz-level-${level}`]: level,
+        loading,
+        disabled,
+      };
+    });
+
+    return { classes };
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-.default {
+.iz-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -49,9 +77,6 @@ $radius: 4px;
   }
   &:focus {
     outline: none;
-  }
-  &::-moz-focus-inner {
-    border: 0;
   }
 }
 </style>
