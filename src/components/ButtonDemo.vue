@@ -1,36 +1,35 @@
 <template>
-  <h1>主题</h1>
-  <button-ab  >ass</button-ab>
-  <button-ab theme="link" >ass</button-ab>
-  <button-ab theme="text" >ass</button-ab>
-  <h1>大小</h1>
-  <button-ab size="big" >ass</button-ab>
-  <button-ab theme="link" >ass</button-ab>
-  <button-ab theme="text" size="small" >ass</button-ab>
-  <h1>等级</h1>
-  <button-ab level="main" >ass</button-ab>
-  <button-ab theme="link" level="normal" >ass</button-ab>
-  <button-ab theme="text" level="danger" >ass</button-ab>
-  <h1>禁用</h1>
-  <button-ab disabled >ass</button-ab>
-  <h1>加载中</h1>
-  <button-ab loading >ass</button-ab>
-  
+<h1>主题</h1>
+<iz-button>ass</iz-button>
+<iz-button theme="link">ass</iz-button>
+<iz-button theme="text">ass</iz-button>
+<h1>大小</h1>
+<iz-button size="big">ass</iz-button>
+<iz-button theme="link">ass</iz-button>
+<iz-button theme="text" size="small">ass</iz-button>
+<h1>等级</h1>
+<iz-button level="main">ass</iz-button>
+<iz-button theme="link" level="normal">ass</iz-button>
+<iz-button theme="text" level="danger">ass</iz-button>
+<h1>禁用</h1>
+<iz-button disabled>ass</iz-button>
+<h1>加载中</h1>
+<iz-button loading>ass</iz-button>
 </template>
 
 <script lang="ts">
-import ButtonAb from "../lib/button/ButtonAb.vue";
+import IzButton from "../lib/button/IzButton.vue";
 export default {
-  name: "Button",
-  components: {
-    ButtonAb
-  },
-  setup() {
-   
-    return {
-      
-    };
-  },
+    name: "Button",
+    components: {
+        IzButton
+    },
+    setup() {
+
+        return {
+
+        };
+    },
 };
 </script>
 
