@@ -37,7 +37,11 @@ export default {
     const showDialog = ()=>{
       openDialog({
         title:`标题`,
-        content:`一行二行`
+        content:`一行二行`,
+        closeOnClickOverlay:true,
+        confirm:()=>{
+          return true
+        }
       })
     }
     return {

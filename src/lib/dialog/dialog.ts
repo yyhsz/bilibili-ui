@@ -1,7 +1,7 @@
 import IzDialog from './IzDialog.vue'
 import { createApp, h } from 'vue'
 const openDialog = (options) => {
-    const { title, content } = options
+    const { title, content,closeOnClickOverlay,confirm } = options
     const div = document.createElement('div')
     document.body.appendChild(div)
     const dialog = createApp({
@@ -13,7 +13,9 @@ const openDialog = (options) => {
                         dialog.unmount(div)
                         div.remove()
                     }
-                }
+                },
+                closeOnClickOverlay,
+                confirm
             }, { title, content })
         }
     })
