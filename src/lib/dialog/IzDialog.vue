@@ -3,12 +3,11 @@
     <div class="iz-dialog-overlay" @click="clickOverlay"></div>
     <div class="iz-dialog-wrapper">
       <header>
-        标题
+        <slot name="title" />
         <span class="iz-dialog-close" @click="close"></span>
       </header>
       <main>
-        <p>第一行</p>
-        <p>第二行</p>
+        <slot name="content" />
       </main>
       <footer>
         <iz-button @click="cancel">取消</iz-button>
@@ -27,10 +26,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    closeOnClickOverlay:{
-        type:Boolean,
-        default:false
-    }
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: false,
+    },
   },
   components: {
     IzButton,
@@ -46,15 +45,15 @@ export default {
     const close = () => {
       ctx.emit("update:visible", false);
     };
-    const clickOverlay = ()=>{
-        console.log(props.closeOnClickOverlay);
-        return props.closeOnClickOverlay && close()
-    }
+    const clickOverlay = () => {
+      console.log(props.closeOnClickOverlay);
+      return props.closeOnClickOverlay && close();
+    };
     return {
       cancel,
       confirm,
       close,
-      clickOverlay
+      clickOverlay,
     };
   },
 };
