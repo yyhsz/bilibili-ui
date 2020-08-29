@@ -11,7 +11,7 @@
           <slot name="content" />
         </main>
         <footer>
-          <iz-button @click="cancel">取消</iz-button>
+          <iz-button @click="close">取消</iz-button>
           <iz-button @click="confirm">确认</iz-button>
         </footer>
       </div>
@@ -32,17 +32,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    confirm:{
+        type:Function
+    }
   },
   components: {
     IzButton,
   },
   setup(props, ctx) {
-    const cancel = () => {
-      console.log(ctx.emit("hhha"));
-      ctx.emit("update:visible", false);
-    };
     const confirm = () => {
-      ctx.emit("update:visible", false);
+      props.confirm ? props.confirm()&&close() : false
     };
     const close = () => {
       ctx.emit("update:visible", false);
@@ -52,7 +51,6 @@ export default {
       return props.closeOnClickOverlay && close();
     };
     return {
-      cancel,
       confirm,
       close,
       clickOverlay,

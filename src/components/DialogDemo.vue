@@ -2,7 +2,7 @@
   <div>
     <h1>示例1</h1>
     <iz-button @click="toogle">弹出</iz-button>
-    <iz-dialog v-model:visible="visible" :visible="visible" closeOnClickOverlay>
+    <iz-dialog v-model:visible="visible" :confirm="confirm" >
       <template #title>提示</template>
       <template #content>
         <p>一行代码</p>
@@ -28,9 +28,13 @@ export default {
     const toogle = () => {
       visible.value = !visible.value;
     };
+    const confirm = ()=>{
+      return true
+    }
     return {
       visible,
       toogle,
+      confirm
     };
   },
 };
