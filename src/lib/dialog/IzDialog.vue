@@ -1,5 +1,6 @@
 <template>
-  <div class="iz-dialog-overlay"></div>
+  <div v-if="visible">
+      <div class="iz-dialog-overlay"></div>
   <div class="iz-dialog-wrapper">
     <header>
       标题
@@ -14,12 +15,19 @@
       <iz-button>确认</iz-button>
     </footer>
   </div>
+  </div>
 </template>
 
 <script>
 import IzButton from "../button/IzButton.vue";
 import { ref } from "vue";
 export default {
+    props:{
+        visible:{
+            type:Boolean,
+            default:false
+        }
+    },
   components: {
     IzButton,
   },
