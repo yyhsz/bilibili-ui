@@ -9,6 +9,8 @@
         <p>两行代码</p>
       </template>
     </iz-dialog>
+    <h1>示例2</h1>
+    <iz-button @click="showDialog">123</iz-button>
   </div>
 </template>
 
@@ -16,6 +18,7 @@
 import IzDialog from "../lib/dialog/IzDialog.vue";
 import IzButton from "../lib/button/IzButton.vue";
 
+import {openDialog} from '../lib/dialog/dialog'
 import { ref } from "vue";
 export default {
   name: "DialogDemo",
@@ -31,10 +34,17 @@ export default {
     const confirm = ()=>{
       return true
     }
+    const showDialog = ()=>{
+      openDialog({
+        title:`标题`,
+        content:`一行二行`
+      })
+    }
     return {
       visible,
       toogle,
-      confirm
+      confirm,
+      showDialog
     };
   },
 };

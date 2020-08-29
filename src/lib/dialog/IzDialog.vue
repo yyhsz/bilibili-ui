@@ -47,7 +47,6 @@ export default {
       ctx.emit("update:visible", false);
     };
     const clickOverlay = () => {
-      console.log(props.closeOnClickOverlay);
       return props.closeOnClickOverlay && close();
     };
     return {
