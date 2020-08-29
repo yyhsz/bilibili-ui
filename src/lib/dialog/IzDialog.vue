@@ -1,19 +1,21 @@
 <template>
   <div v-if="visible">
-    <div class="iz-dialog-overlay" @click="clickOverlay"></div>
-    <div class="iz-dialog-wrapper">
-      <header>
-        <slot name="title" />
-        <span class="iz-dialog-close" @click="close"></span>
-      </header>
-      <main>
-        <slot name="content" />
-      </main>
-      <footer>
-        <iz-button @click="cancel">取消</iz-button>
-        <iz-button @click="confirm">确认</iz-button>
-      </footer>
-    </div>
+    <teleport to="body">
+      <div class="iz-dialog-overlay" @click="clickOverlay"></div>
+      <div class="iz-dialog-wrapper">
+        <header>
+          <slot name="title" />
+          <span class="iz-dialog-close" @click="close"></span>
+        </header>
+        <main>
+          <slot name="content" />
+        </main>
+        <footer>
+          <iz-button @click="cancel">取消</iz-button>
+          <iz-button @click="confirm">确认</iz-button>
+        </footer>
+      </div>
+    </teleport>
   </div>
 </template>
 
