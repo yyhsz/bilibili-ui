@@ -2,7 +2,8 @@
   <div>
     <h1>示例1</h1>
     <iz-button @click="toogle">弹出</iz-button>
-    <iz-dialog :visible="visible"></iz-dialog>
+    <iz-dialog v-model:visible="visible" :visible="visible" 
+    closeOnClickOverlay></iz-dialog>
   </div>
 </template>
 

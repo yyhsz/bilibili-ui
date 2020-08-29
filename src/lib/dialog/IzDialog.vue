@@ -1,20 +1,20 @@
 <template>
   <div v-if="visible">
-      <div class="iz-dialog-overlay"></div>
-  <div class="iz-dialog-wrapper">
-    <header>
-      标题
-      <span class="iz-dialog-close"></span>
-    </header>
-    <main>
-      <p>第一行</p>
-      <p>第二行</p>
-    </main>
-    <footer>
-      <iz-button>取消</iz-button>
-      <iz-button>确认</iz-button>
-    </footer>
-  </div>
+    <div class="iz-dialog-overlay" @click="clickOverlay"></div>
+    <div class="iz-dialog-wrapper">
+      <header>
+        标题
+        <span class="iz-dialog-close" @click="close"></span>
+      </header>
+      <main>
+        <p>第一行</p>
+        <p>第二行</p>
+      </main>
+      <footer>
+        <iz-button @click="cancel">取消</iz-button>
+        <iz-button @click="confirm">确认</iz-button>
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -22,14 +22,40 @@
 import IzButton from "../button/IzButton.vue";
 import { ref } from "vue";
 export default {
-    props:{
-        visible:{
-            type:Boolean,
-            default:false
-        }
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
     },
+    closeOnClickOverlay:{
+        type:Boolean,
+        default:false
+    }
+  },
   components: {
     IzButton,
+  },
+  setup(props, ctx) {
+    const cancel = () => {
+      console.log(ctx.emit("hhha"));
+      ctx.emit("update:visible", false);
+    };
+    const confirm = () => {
+      ctx.emit("update:visible", false);
+    };
+    const close = () => {
+      ctx.emit("update:visible", false);
+    };
+    const clickOverlay = ()=>{
+        console.log(props.closeOnClickOverlay);
+        return props.closeOnClickOverlay && close()
+    }
+    return {
+      cancel,
+      confirm,
+      close,
+      clickOverlay
+    };
   },
 };
 </script>
