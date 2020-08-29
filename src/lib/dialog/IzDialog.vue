@@ -1,5 +1,5 @@
 <template>
-  <div v-if="visible">
+  <template v-if="visible">
     <teleport to="body">
       <div class="iz-dialog-overlay" @click="clickOverlay"></div>
       <div class="iz-dialog-wrapper">
@@ -16,7 +16,7 @@
         </footer>
       </div>
     </teleport>
-  </div>
+  </template>
 </template>
 
 <script>
