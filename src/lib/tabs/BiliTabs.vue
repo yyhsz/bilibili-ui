@@ -1,14 +1,22 @@
 <template>
   <div class="bili-tabs">
     <div class="bili-tabs-nav">
-      <div class="bili-tabs-nav-item" 
-       v-for="(item,index) in titles" :key="index"
-       :class="{selected:currentIndex === index}"
-       @click="itemClick(index)"
-       >{{item}}</div>
+      <div
+        class="bili-tabs-nav-item"
+        v-for="(item,index) in titles"
+        :key="index"
+        :class="{selected:currentIndex === index}"
+        @click="itemClick(index)"
+      >{{item}}</div>
     </div>
     <div class="bili-tabs-content">
-      <component :is="currentTab"></component>
+      <component
+        v-for="(item,index) in slots"
+        :key="index"
+        :is="item"
+        :class="{selected:currentIndex === index}"
+        class="bili-tabs-content-item"
+      ></component>
     </div>
   </div>
 </template>
@@ -24,17 +32,16 @@ export default {
   setup(props, ctx) {
     const currentIndex = ref(0);
     const slots = ctx.slots.default();
-    let currentTab
-    let titles = []
+    let titles = [];
     //判断使用者传入的子组件类型
-    if (slots[0].type === "template") { //如果使用者用template包住插槽内容
+    if (slots[0].type === "template") {
+      //如果使用者用template包住插槽内容
       slots[0].children.forEach((ele) => {
         if (ele.type !== BiliTab) {
           throw new Error("bili-tabs子元素必须是bili-tab");
         }
       });
-    } 
-    else {
+    } else {
       slots.forEach((ele) => {
         if (ele.type !== BiliTab) {
           throw new Error("bili-tabs子元素必须是bili-tab");
@@ -45,18 +52,17 @@ export default {
       });
     }
     //获取子组件中默认选中元素的索引值
-    const selectedIndex = slots.findIndex((ele)=>{
-        return ele.props.selected
-    })
-    currentTab = slots[selectedIndex]
-    currentIndex.value = selectedIndex === -1 ? currentIndex : selectedIndex
+    const selectedIndex = slots.findIndex((ele) => {
+      return ele.props.selected;
+    });
+    console.log(selectedIndex);
+    currentIndex.value =
+      selectedIndex === -1 ? currentIndex.value : selectedIndex;
     //
-    const itemClick = (index)=>{
-        currentIndex.value  = index
-        currentTab = slots[index]
-    }
-   
-    return { currentIndex, titles,itemClick,currentTab };
+    const itemClick = (index) => {
+      currentIndex.value = index;
+    };
+    return { slots, currentIndex, titles, itemClick };
   },
 };
 </script>
@@ -84,6 +90,12 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
+    &-item {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>

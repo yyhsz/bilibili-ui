@@ -13,8 +13,8 @@ export default {
     //     }
     // },
   setup(props, ctx) {
-    //   console.log(props.selected);
-    console.log(1);
+
+
     return {};
   },
 };
