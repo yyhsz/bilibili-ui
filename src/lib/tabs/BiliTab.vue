@@ -1,19 +1,16 @@
 <template>
-    <div>
-
-    </div>
+  <div>
+    <slot />
+  </div>
 </template>
 
 <script>
 export default {
-    setup () {
-        
-
-        return {}
-    }
-}
+  setup(props, ctx) {
+    return {};
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

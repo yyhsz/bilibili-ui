@@ -1,21 +1,25 @@
 <template>
   <h1>示例1</h1>
-  <Tabs>
-    <Tab title="导航1">内容1</Tab>
-    <Tab title="导航2">内容2</Tab>
-  </Tabs>
+  <bili-tabs>
+    <template #aaa>
+      <bili-tab title="导航1">123</bili-tab>
+      <bili-tab title="导航2">456</bili-tab>
+    </template>
+  </bili-tabs>
 </template>
 
 <script>
-import Tabs from "../lib/tabs/Tabs";
-import Tab from "../lib/tabs/Tab";
+import BiliTabs from "../lib/tabs/BiliTabs.vue";
+import BiliTab from "../lib/tabs/BiliTab.vue";
 
 export default {
-  name: "Tabs",
   components: {
-    Tabs,
-    Tab,
+    BiliTabs,
+    BiliTab,
   },
+  setup(){
+    
+  }
 };
 </script>
 
