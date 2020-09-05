@@ -2,7 +2,7 @@
   <h1>示例1</h1>
   <bili-tabs>
       <bili-tab title="导航1" >123</bili-tab>
-      <bili-tab title="导航2">456</bili-tab>
+      <bili-tab title="导航256757" selected>2353462346</bili-tab>
   </bili-tabs>
 </template>
 

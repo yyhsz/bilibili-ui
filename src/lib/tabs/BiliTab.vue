@@ -6,14 +6,13 @@
 
 <script>
 export default {
-    // props:{
-    //     selected:{
-    //         type:Boolean,
-    //         default:false
-    //     }
-    // },
+    props:{
+        selected:{
+            type:Boolean,
+            default:false
+        }
+    },
   setup(props, ctx) {
-
 
     return {};
   },

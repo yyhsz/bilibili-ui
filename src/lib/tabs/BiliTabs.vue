@@ -1,14 +1,15 @@
 <template>
   <div class="bili-tabs">
-    <div class="bili-tabs-nav">
+    <div class="bili-tabs-nav" ref="container">
       <div
         class="bili-tabs-nav-item"
         v-for="(item,index) in titles"
         :key="index"
         :class="{selected:currentIndex === index}"
         @click="itemClick(index)"
+        :ref="el=>{if(el) navItems[index] = el}"
       >{{item}}</div>
-      <div class="bili-tabs-nav-indicator"></div>
+      <div class="bili-tabs-nav-indicator" ref="navIndicator"></div>
     </div>
     <div class="bili-tabs-content">
       <component
@@ -22,7 +23,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { onMounted, ref } from "vue";
 import BiliTab from "./BiliTab.vue";
 
@@ -33,37 +34,61 @@ export default {
   setup(props, ctx) {
     const currentIndex = ref(0);
     const slots = ctx.slots.default();
+    const navItems = ref<HTMLDivElement[]>([]);
+    const navIndicator = ref<HTMLDivElement>(null);
+    const container = ref<HTMLDivElement>(null);
     let titles = [];
     //判断使用者传入的子组件类型
-    if (slots[0].type === "template") {
-      //如果使用者用template包住插槽内容
-      slots[0].children.forEach((ele) => {
-        if (ele.type !== BiliTab) {
-          throw new Error("bili-tabs子元素必须是bili-tab");
-        }
-      });
-    } else {
-      slots.forEach((ele) => {
-        if (ele.type !== BiliTab) {
-          throw new Error("bili-tabs子元素必须是bili-tab");
-        }
-      });
-      titles = slots.map((ele) => {
-        return ele.props.title;
-      });
-    }
+    slots.forEach((ele) => {
+      if (ele.type !== BiliTab) {
+        throw new Error("bili-tabs子元素必须是bili-tab");
+      }
+    });
+    titles = slots.map((ele) => {
+      return ele.props.title;
+    });
     //获取子组件中默认选中元素的索引值
     const selectedIndex = slots.findIndex((ele) => {
-      return ele.props.selected;
+      return ele.props.selected || ele.props.selected === "";
     });
-    console.log(selectedIndex);
     currentIndex.value =
       selectedIndex === -1 ? currentIndex.value : selectedIndex;
-    //
+    //点击切换选项
     const itemClick = (index) => {
       currentIndex.value = index;
+      //动态控制navIndicator的width
+      navIndicator.value.style.width =
+        [...navItems.value][index].getBoundingClientRect().width + "px";
+      //动态控制navIndicator的left
+      navIndicator.value.style.left =
+        navItems.value[index].getBoundingClientRect().left -
+        container.value.getBoundingClientRect().left +
+        "px";
     };
-    return { slots, currentIndex, titles, itemClick };
+    //
+    onMounted(() => {
+      const result = [...navItems.value]
+        .find((ele) => {
+          return ele.classList.contains("selected");
+          //上下两种写法效果一样
+          //return [...ele.classList].find(ele=>ele === 'selected')
+        })
+        .getBoundingClientRect();
+      //动态控制navIndicator的width,left
+      navIndicator.value.style.width = result.width + "px";
+      navIndicator.value.style.left =
+        result.left - container.value.getBoundingClientRect().left + "px";
+    });
+
+    return {
+      slots,
+      currentIndex,
+      titles,
+      itemClick,
+      navItems,
+      navIndicator,
+      container,
+    };
   },
 };
 </script>
@@ -79,7 +104,7 @@ $border-color: #d9d9d9;
     border-bottom: 1px solid $border-color;
     position: relative;
     &-item {
-      padding: 8px 0;
+      padding: 8px 1px;
       margin: 0 16px;
       cursor: pointer;
       &:first-child {
