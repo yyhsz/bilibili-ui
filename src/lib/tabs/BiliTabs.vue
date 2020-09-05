@@ -13,10 +13,8 @@
     </div>
     <div class="bili-tabs-content">
       <component
-        v-for="(item,index) in slots"
-        :key="index"
-        :is="item"
-        :class="{selected:currentIndex === index}"
+        :is="slots[currentIndex]"
+        :key="slots[currentIndex].props.title"     
         class="bili-tabs-content-item"
       ></component>
     </div>
@@ -24,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { nextTick, onMounted, ref, watchEffect } from "vue";
+import { onMounted, ref, watchEffect } from "vue";
 import BiliTab from "./BiliTab.vue";
 
 export default {
@@ -57,16 +55,6 @@ export default {
     //点击切换选项
     const itemClick = (index) => {
       currentIndex.value = index;
-      //   nextTick(() => {
-      //     //动态控制navIndicator的width
-      //     navIndicator.value.style.width =
-      //       selectedItem.value.getBoundingClientRect().width + "px";
-      //     //动态控制navIndicator的left
-      //     navIndicator.value.style.left =
-      //       selectedItem.value.getBoundingClientRect().left -
-      //       container.value.getBoundingClientRect().left +
-      //       "px";
-      //   });
     };
     //使用watchEffect优化动态控制navIndicater
     onMounted(() => {
@@ -125,12 +113,12 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
-    &-item {
-      display: none;
-      &.selected {
-        display: block;
-      }
-    }
+    // &-item {
+    //   display: none;
+    //   &.selected {
+    //     display: block;
+    //   }
+    // }
   }
 }
 </style>
