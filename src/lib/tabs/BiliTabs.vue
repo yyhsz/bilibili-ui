@@ -57,24 +57,26 @@ export default {
     //点击切换选项
     const itemClick = (index) => {
       currentIndex.value = index;
-    //   nextTick(() => {
-    //     //动态控制navIndicator的width
-    //     navIndicator.value.style.width =
-    //       selectedItem.value.getBoundingClientRect().width + "px";
-    //     //动态控制navIndicator的left
-    //     navIndicator.value.style.left =
-    //       selectedItem.value.getBoundingClientRect().left -
-    //       container.value.getBoundingClientRect().left +
-    //       "px";
-    //   });
+      //   nextTick(() => {
+      //     //动态控制navIndicator的width
+      //     navIndicator.value.style.width =
+      //       selectedItem.value.getBoundingClientRect().width + "px";
+      //     //动态控制navIndicator的left
+      //     navIndicator.value.style.left =
+      //       selectedItem.value.getBoundingClientRect().left -
+      //       container.value.getBoundingClientRect().left +
+      //       "px";
+      //   });
     };
     //使用watchEffect优化动态控制navIndicater
-    watchEffect(() => {
-      const result = selectedItem.value.getBoundingClientRect();
-      //动态控制navIndicator的width,left
-      navIndicator.value.style.width = result.width + "px";
-      navIndicator.value.style.left =
-        result.left - container.value.getBoundingClientRect().left + "px";
+    onMounted(() => {
+      watchEffect(() => {
+        const result = selectedItem.value.getBoundingClientRect();
+        //动态控制navIndicator的width,left
+        navIndicator.value.style.width = result.width + "px";
+        navIndicator.value.style.left =
+          result.left - container.value.getBoundingClientRect().left + "px";
+      });
     });
 
     return {
