@@ -1,18 +1,18 @@
 <template>
   <template v-if="visible">
     <teleport to="body">
-      <div class="iz-dialog-overlay" @click="clickOverlay"></div>
-      <div class="iz-dialog-wrapper">
+      <div class="bili-dialog-overlay" @click="clickOverlay"></div>
+      <div class="bili-dialog-wrapper">
         <header>
           <slot name="title" />
-          <span class="iz-dialog-close" @click="close"></span>
+          <span class="bili-dialog-close" @click="close"></span>
         </header>
         <main>
           <slot name="content" />
         </main>
         <footer>
-          <iz-button @click="close">取消</iz-button>
-          <iz-button @click="confirm">确认</iz-button>
+          <bili-button @click="close">取消</bili-button>
+          <bili-button @click="confirm">确认</bili-button>
         </footer>
       </div>
     </teleport>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import IzButton from "../button/IzButton.vue";
+import BiliButton from "../button/BiliButton.vue";
 import { ref } from "vue";
 export default {
   props: {
@@ -37,7 +37,7 @@ export default {
     }
   },
   components: {
-    IzButton,
+    BiliButton,
   },
   setup(props, ctx) {
     const confirm = () => {
@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 $radius: 4px;
 $border-color: #d9d9d9;
-.iz-dialog {
+.bili-dialog {
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
   min-width: 15em;

@@ -1,27 +1,27 @@
 <template>
   <h1>主题</h1>
-  <iz-button>ass</iz-button>
-  <iz-button theme="link">ass</iz-button>
-  <iz-button theme="text">ass</iz-button>
+  <bili-button>ass</bili-button>
+  <bili-button theme="link">ass</bili-button>
+  <bili-button theme="text">ass</bili-button>
   <h1>大小</h1>
-  <iz-button size="big">ass</iz-button>
-  <iz-button theme="link">ass</iz-button>
-  <iz-button theme="text" size="small">ass</iz-button>
+  <bili-button size="big">ass</bili-button>
+  <bili-button theme="link">ass</bili-button>
+  <bili-button theme="text" size="small">ass</bili-button>
   <h1>等级</h1>
-  <iz-button level="main">ass</iz-button>
-  <iz-button theme="link" level="normal">ass</iz-button>
-  <iz-button theme="text" level="danger">ass</iz-button>
+  <bili-button level="main">ass</bili-button>
+  <bili-button theme="link" level="normal">ass</bili-button>
+  <bili-button theme="text" level="danger">ass</bili-button>
   <h1>禁用</h1>
-  <iz-button disabled>ass</iz-button>
+  <bili-button disabled>ass</bili-button>
   <h1>加载中</h1>
-  <iz-button loading>ass</iz-button>
+  <bili-button loading>ass</bili-button>
 </template>
 
 <script lang="ts">
-import IzButton from "../lib/button/IzButton.vue";
+import BiliButton from "../lib/button/BiliButton.vue";
 export default {
   components: {
-    IzButton,
+    BiliButton,
   },
   setup() {
     return {};

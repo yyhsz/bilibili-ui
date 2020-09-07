@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Switch v-model:checked="checked"/>
+    <bili-switch v-model:checked="checked"/>
   </div>
 </template>
 
 <script>
-import Switch from "../lib/switch/Switch.vue";
+import BiliSwitch from "../lib/switch/BiliSwitch.vue";
 import {ref} from 'vue'
 export default {
   name: "SwitchDemo",
   components: {
-    Switch,
+    BiliSwitch,
   },
   setup(){
    const checked =  ref(true)

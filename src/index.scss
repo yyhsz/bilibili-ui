@@ -7,10 +7,6 @@ ul,ol{
 a{
   text-decoration: none;
   color: inherit;
-  &:hover{
-    border-bottom:1px solid;
-    cursor: pointer;
-  }
 }
 body {
   font-size: 16px;

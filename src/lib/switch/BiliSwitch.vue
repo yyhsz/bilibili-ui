@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" class="iz-switch" :class="{'iz-checked':checked}">
+  <button @click="toggle" class="bili-switch" :class="{'bili-checked':checked}">
     <span></span>
   </button>
 </template>
@@ -25,7 +25,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-.iz-switch {
+.bili-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -44,7 +44,7 @@ $h2: $h - 4px;
     left: 2px;
     transition: all 250ms ease-in-out;
   }
-  &.iz-checked {
+  &.bili-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -55,7 +55,7 @@ $h2: $h - 4px;
       width: $h2 + 4px;
     }
   }
-  &.iz-checked:active {
+  &.bili-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
