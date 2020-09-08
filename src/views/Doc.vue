@@ -176,8 +176,8 @@ main {
   overflow: auto;
   flex: 1 0;
   margin: 60px;
-  background: rgba(248, 246, 246,.6);
-  padding: 28px;
+  background: rgba(248, 246, 246,.8);
+  padding: 48px;
   border-radius: 6px;
   @media (max-width: 500px) {
     padding:8px;

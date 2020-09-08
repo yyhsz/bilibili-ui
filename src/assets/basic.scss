@@ -1,0 +1,66 @@
+section {
+  margin-bottom: 28px;
+}
+h1 {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+h3 {
+  margin-bottom: 14px;
+}
+p {
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+pre {
+  border: 1px solid #00a1d6;
+  border-radius: 6px;
+  background: rgb(255, 255, 255);
+  padding: 8px;
+  padding-top: 16px;
+  margin-bottom: 10px;
+}
+.background {
+  padding: 20px 10px;
+  border-radius: 6px;
+  background: white;
+}
+.background > div {
+  margin-bottom: 16px;
+}
+table {
+  width: 100%;
+}
+thead,
+tr {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #00a1d6;
+}
+table {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom: none;
+}
+
+/* Padding and font style */
+td,
+th {
+  padding: 5px 10px;
+  font-family: Verdana;
+  color: #00a1d6;
+}
+
+/* Alternating background colors */
+tr:nth-child(even) {
+  background: #d3dfed;
+}
+tr:nth-child(odd) {
+  background: #fff;
+}
