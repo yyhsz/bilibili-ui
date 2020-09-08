@@ -5,7 +5,9 @@
       <div class="mask1"></div>
       <div class="mask2"></div>
       <div class="content">
-        <div class="xiaodianshi"><img src="../../public/images/bilibili.png" alt=""></div>
+        <div class="xiaodianshi">
+          <img src="../../public/images/bilibili.png" alt />
+        </div>
         <div class="desc">
           <img src="../../public/images/logo-white.png" alt />
         </div>
@@ -38,7 +40,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url("../../public/images/bg1.jpg") center center ;
+  background: url("../../public/images/bg1.jpg") center center;
   background-size: 120vw;
   background-position-y: 300px;
   background-position-x: 120px;
@@ -57,33 +59,44 @@ export default {
   .mask2 {
     background: rgba(0, 0, 0, 0.4);
   }
-  
+
   .content {
     position: fixed;
-    top:250px;left: 230px;
+    top: 300px;
+    left: 230px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 400px;
+    width: 300px;
   }
-  .xiaodianshi{
-    width: 180px;
-    margin: 0 auto;
-    img{
-      width:100%;
+  @media (max-width: 500px) {
+    .content{
+      top: 50%;
+      left: 50%;
+      transform: translateY(-200px) translateX(-150px);
     }
   }
-  .desc{
-    img{
+  .xiaodianshi {
+    width: 180px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  .desc {
+    img {
       width: 100px;
     }
   }
-  h1{
+  h1 {
     color: rgb(255, 255, 255);
   }
   .actions {
     padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
     a {
       margin: 0 8px;
       background: #00a1d6;
@@ -93,13 +106,11 @@ export default {
       line-height: 36px;
       text-align: center;
       color: white;
-      transition: all .3s;
+      transition: all 0.3s;
     }
-    a:hover{
+    a:hover {
       background: #fb7299;
-
     }
   }
-
 }
 </style>
