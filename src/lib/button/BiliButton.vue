@@ -33,7 +33,6 @@ export default {
   },
   setup(props, ctx) {
     const { theme, loading, size, level, disabled } = props;
-    console.log(loading);
     const classes = computed(() => {
       return {
         [`bili-theme-${theme}`]: theme,

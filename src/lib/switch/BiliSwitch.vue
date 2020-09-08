@@ -1,23 +1,38 @@
 <template>
-  <button @click="toggle" class="bili-switch" :class="{'bili-checked':checked}">
+  <button @click="toggle" class="bili-switch" :class="classes">
     <span></span>
   </button>
 </template>
 
 <script>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 export default {
   props: {
     checked: {
       type: Boolean,
       default: true,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    aaa: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, ctx) {
     const toggle = () => {
-      ctx.emit("update:checked", !props.checked);
+      return !props.disabled && ctx.emit("update:checked", !props.checked);
     };
-    return { toggle };
+    const classes = computed(() => {
+      return {
+        [`bili-checked`]: props.checked,
+        [`bili-disabled`]: props.disabled,
+      };
+    });
+
+    return { toggle, classes };
   },
 };
 </script>
@@ -25,6 +40,8 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
+$blue: #00a1d6;
+$red: #fb7299;
 .bili-switch {
   height: $h;
   width: $h * 2;
@@ -32,8 +49,21 @@ $h2: $h - 4px;
   border-radius: $h/2;
   position: relative;
   outline: none;
-  background: #bfbfbf;
+  background: $red;
   cursor: pointer;
+  &.bili-checked {
+    background: $blue;
+    > span {
+      left: calc(100% - #{$h2} - 2px);
+    }
+  }
+  &.bili-checked.bili-disabled{
+    background: lighten($color: $blue, $amount: 8);
+  }
+  &.bili-disabled{
+    cursor:not-allowed;
+    background: lighten($color: $red, $amount: 8);
+  }
   > span {
     width: $h2;
     height: $h2;
@@ -43,12 +73,6 @@ $h2: $h - 4px;
     top: 2px;
     left: 2px;
     transition: all 250ms ease-in-out;
-  }
-  &.bili-checked {
-    background: #1890ff;
-    > span {
-      left: calc(100% - #{$h2} - 2px);
-    }
   }
   &:active {
     > span {

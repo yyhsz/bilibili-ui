@@ -41,7 +41,8 @@ export default {
   },
   setup(props, ctx) {
     const confirm = () => {
-      props.confirm ? props.confirm()&&close() : false
+      // props.confirm ? props.confirm()&&close() : false
+      props.confirm?.()&&close()
     };
     const close = () => {
       ctx.emit("update:visible", false);

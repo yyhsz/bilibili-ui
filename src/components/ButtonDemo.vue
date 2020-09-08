@@ -10,9 +10,6 @@
       </bili-button>
       <bili-button theme="text">文字按钮</bili-button>
     </div>
-    <h3>示例代码：</h3>
-    <pre>
-    </pre>
   </section>
   <section>
     <h3>禁用按钮:</h3>
@@ -24,8 +21,6 @@
       </bili-button>
       <bili-button theme="text" disabled>文字按钮</bili-button>
     </div>
-    <h3>示例代码：</h3>
-    <pre></pre>
   </section>
   <section>
     <h3>加载中</h3>
@@ -33,8 +28,6 @@
     <div class="background">
       <bili-button loading>默认按钮</bili-button>
     </div>
-    <h3>示例代码：</h3>
-    <pre></pre>
   </section>
   <section>
     <h3>不同尺寸</h3>
@@ -47,8 +40,6 @@
       <bili-button>默认按钮</bili-button>
       <bili-button size="small">默认按钮</bili-button>
     </div>
-    <h3>示例代码：</h3>
-    <pre></pre>
   </section>
   <section>
     <h3>不同等级</h3>
@@ -58,8 +49,6 @@
       <bili-button level="danger">危险按钮</bili-button>
       <bili-button level="main">主要按钮</bili-button>
     </div>
-    <h3>示例代码：</h3>
-    <pre></pre>
   </section>
   <h3>Attributes</h3>
   <table>

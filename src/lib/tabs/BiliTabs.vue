@@ -5,7 +5,7 @@
         class="bili-tabs-nav-item"
         v-for="(item,index) in titles"
         :key="index"
-        :class="{selected:currentIndex === index}"
+        :class="{'bili-selected':currentIndex === index,'bili-disabled':disIndex.some(ele=>ele === index)}"
         @click="itemClick(index)"
         :ref="el=>{if(currentIndex === index) selectedItem = el}"
       >{{item}}</div>
@@ -14,7 +14,7 @@
     <div class="bili-tabs-content">
       <component
         :is="slots[currentIndex]"
-        :key="slots[currentIndex].props.title"     
+        :key="slots[currentIndex].props.title"
         class="bili-tabs-content-item"
       ></component>
     </div>
@@ -35,6 +35,7 @@ export default {
     const navIndicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     const selectedItem = ref<HTMLDivElement>(null);
+    
     let titles = [];
     //判断使用者传入的子组件类型
     slots.forEach((ele) => {
@@ -45,6 +46,12 @@ export default {
     titles = slots.map((ele) => {
       return ele.props.title;
     });
+    //判断组件中有无disabled值
+    const disIndex = [] //含有disabled的item索引值
+    slots.forEach((ele,index)=>{
+      if(ele.props.disabled || ele.props.disabled === '') disIndex.push(index)
+    })
+    console.log(disIndex);
     //获取子组件中默认选中元素的索引值
     const selectedIndex = slots.findIndex((ele) => {
       return ele.props.selected || ele.props.selected === ""; //这里应该是VUE3bug，
@@ -54,7 +61,7 @@ export default {
       selectedIndex === -1 ? currentIndex.value : selectedIndex;
     //点击切换选项
     const itemClick = (index) => {
-      currentIndex.value = index;
+      return !disIndex.some(ele=>ele===index) && (currentIndex.value = index);
     };
     //使用watchEffect优化动态控制navIndicater
     onMounted(() => {
@@ -75,6 +82,7 @@ export default {
       navIndicator,
       container,
       selectedItem,
+      disIndex
     };
   },
 };
@@ -97,8 +105,12 @@ $border-color: #d9d9d9;
       &:first-child {
         margin-left: 0;
       }
-      &.selected {
+      &.bili-selected {
         color: $blue;
+      }
+      &.bili-disabled {
+        cursor: not-allowed;
+        color: #999;
       }
     }
     &-indicator {
