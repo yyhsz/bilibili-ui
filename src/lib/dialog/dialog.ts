@@ -1,4 +1,4 @@
-import IzDialog from './IzDialog.vue'
+import BiliDialog from './BiliDialog.vue'
 import { createApp, h } from 'vue'
 const openDialog = (options) => {
     const { title, content,closeOnClickOverlay,confirm } = options
@@ -6,7 +6,7 @@ const openDialog = (options) => {
     document.body.appendChild(div)
     const dialog = createApp({
         render() {
-            return h(IzDialog, {
+            return h(BiliDialog, {
                 visible: true,
                 'onUpdate:visible': (newValue) => { 
                     if(!newValue){

@@ -179,6 +179,10 @@ main {
   background: rgba(248, 246, 246,.6);
   padding: 28px;
   border-radius: 6px;
+  @media (max-width: 500px) {
+    padding:8px;
+    margin: 8px;
+  }
 }
 
 </style>

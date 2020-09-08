@@ -5,6 +5,9 @@
     </div>
     <ul class="menu">
       <li>
+        <img class="deco" src="../../../public/images/2.jpg" alt />
+      </li>
+      <li>
         <a href="https://github.com/yyhsz/bilibili-ui">
           <img src="../../../public/images/github.png" alt />
         </a>
@@ -23,7 +26,10 @@ export default {
     const menuActive = inject<Ref<boolean>>("menuActive");
 
     const toggleMenu = () => {
-      if (router.currentRoute.value.path !== "/" && document.documentElement.clientWidth<=500) {
+      if (
+        router.currentRoute.value.path !== "/" &&
+        document.documentElement.clientWidth <= 500
+      ) {
         //在非主页且小屏模式下才展示菜单
         showMenu.value = !showMenu.value;
         menuActive.value = showMenu.value ? true : false;
@@ -61,12 +67,18 @@ export default {
   }
   > .menu {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     white-space: nowrap;
     flex-wrap: nowrap;
     img {
-      height: 28px;
-      width: 28px;
+      height: 32px;
+      width: 32px;
       margin-right: 20px;
+    }
+    .deco {
+      height: 46px;
+      width: 46px;
     }
     > li {
       margin: 0 1em;
@@ -83,6 +95,9 @@ export default {
   //   display: none;
   // }
   @media (max-width: 500px) {
+    .logo {
+      margin-left: 0;
+    }
     > .menu {
       display: none;
     }
