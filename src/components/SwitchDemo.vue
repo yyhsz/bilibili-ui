@@ -7,12 +7,20 @@
     <div class="background">
       <bili-switch v-model:checked="checked1"/>
     </div>
+      <pre class="markdown-body">
+        通过 v-model:checked="变量" 定义switch组件的初始状态
+        &lt bili-switch v-model:checked="checked1"/ &gt
+      </pre>
   </section>
   <section>
     <h3>禁用状态</h3>
     <div class="background">
       <bili-switch disabled v-model:checked="checked2" />
     </div>
+    <pre class="markdown-body">
+        你可以使用disabled属性来定义按钮是否可用
+        &lt bili-switch disabled v-model:checked="checked2"/ &gt
+      </pre>
   </section>
   <section>
     <h3>Attributes</h3>

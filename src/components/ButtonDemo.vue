@@ -10,6 +10,11 @@
       </bili-button>
       <bili-button theme="text">文字按钮</bili-button>
     </div>
+     <pre class="markdown-body">
+        &ltbili-button>默认按钮 &lt/bili-button&gt
+        &ltbili-button theme="link">&lta href="http://www.baidu.com" target="_blank">链接按钮&lt/a>&lt/bili-button>
+        &ltbili-button theme="text">文字按钮&lt/bili-button>
+      </pre>
   </section>
   <section>
     <h3>禁用按钮:</h3>
@@ -21,6 +26,12 @@
       </bili-button>
       <bili-button theme="text" disabled>文字按钮</bili-button>
     </div>
+    <pre class="markdown-body">
+      通过disabled属性禁用按钮
+      &ltbili-button disabled>默认按钮&lt/bili-button>
+      &ltbili-button theme="link" disabled>&lta href="http://www.baidu.com" target="_blank">链接按钮&lt/a>&lt/bili-button>
+      &ltbili-button theme="text" disabled>文字按钮</bili-button>
+    </pre>
   </section>
   <section>
     <h3>加载中</h3>
@@ -28,6 +39,10 @@
     <div class="background">
       <bili-button loading>默认按钮</bili-button>
     </div>
+    <pre class="markdown-body">
+      通过loading属性给按钮添加加载样式
+      &ltbili-button loading>默认按钮&lt/bili-button>
+    </pre>
   </section>
   <section>
     <h3>不同尺寸</h3>
@@ -40,6 +55,15 @@
       <bili-button>默认按钮</bili-button>
       <bili-button size="small">默认按钮</bili-button>
     </div>
+    <pre class="markdown-body">
+      通过size属性定义按钮大小，接收字符串，默认为normal
+      &ltbili-button theme="text" size="big">文字按钮&lt/bili-button>
+      &ltbili-button theme="text">文字按钮&lt/bili-button>
+      &ltbili-button theme="text" size="small">文字按钮&lt/bili-button>
+      &ltbili-button size="big">默认按钮&lt/bili-button>
+      &ltbili-button>默认按钮&lt/bili-button>
+      &ltbili-button size="small">默认按钮&lt/bili-button>
+    </pre>
   </section>
   <section>
     <h3>不同等级</h3>
@@ -49,6 +73,12 @@
       <bili-button level="danger">危险按钮</bili-button>
       <bili-button level="main">主要按钮</bili-button>
     </div>
+    <pre class="markdown-body">
+      通过level属性定义按钮等级
+      &ltbili-button>默认按钮&lt/bili-button>
+      &ltbili-button level="danger">危险按钮&lt/bili-button>
+      &ltbili-button level="main">主要按钮&lt/bili-button>
+    </pre>
   </section>
   <h3>Attributes</h3>
   <table>

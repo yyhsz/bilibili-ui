@@ -10,6 +10,15 @@
         <bili-tab title="禁用" disabled>123</bili-tab>
       </bili-tabs>
     </div>
+    <pre class="markdown-body">
+      通过title定义导航栏内容，selected属性决定最初被选中的内容，disabled禁用内容
+      &ltbili-tabs>
+        &ltbili-tab title="社会">促就业利民生 中企深耕"一带一路"造福当地&lt/bili-tab>
+        &ltbili-tab title="财经" selected>恒指收跌1.73% 史上第四次低于道指&lt/bili-tab>
+        &ltbili-tab title="体育">权健官方宣布索萨下课 沈祥福现场指挥与鲁能一战&lt/bili-tab>
+        &ltbili-tab title="禁用" disabled>123&lt/bili-tab>
+      &lt/bili-tabs>
+    </pre>
   </section>
   <section>
     <h3>Attributes</h3>

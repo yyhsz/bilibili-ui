@@ -16,10 +16,19 @@
           </template>
         </bili-dialog>
       </div>
+      <pre class="markdown-body">
+        通过visible的值决定对话框的显示与否
+        &ltbili-dialog v-model:visible="visible" :confirm="confirm">
+          &lttemplate #title>提示&lt/template>
+          &lttemplate #content>
+            &ltp>一行代码&lt/p>
+            &ltp>两行代码&lt/p>
+          &lt/template>
+        &lt/bili-dialog>
+      </pre>
     </section>
     <section>
       <h3>以代码形式快速建立简易Dialog</h3>
-      <p></p>
       <div class="background">
         <bili-button
           @click="openDialog({
@@ -30,14 +39,17 @@
       })"
         >弹出对话框2</bili-button>
       </div>
-      <pre>
+      <pre class="markdown-body">
           import { openDialog } from "bili-ui/dialog/dialog"; //引入弹出对话框函数
+          //在按钮上绑定openDialog函数，并传入相应参数
+          &ltbili-button
           @click="openDialog({
-              title: `标题`,
-              content: `一行二行`,
-              closeOnClickOverlay: true,
-              confirm: () => {return true}
-          })"  //在按钮上绑定openDialog函数，并传入相应参数
+            title: `标题`,
+            content: `一行二行`,
+            closeOnClickOverlay: true,
+            confirm: () => {return true}
+          })"
+        >弹出对话框2&lt/bili-button>
       </pre>
     </section>
     <section>
